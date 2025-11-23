@@ -9,6 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+app.get("/", (req, res) => {
+    res.send("Server is working")
+})
 
 
 app.post("/api/contact", async (req, res) => {
